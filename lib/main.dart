@@ -83,9 +83,9 @@ class _ControlDeckScreenState extends State<ControlDeckScreen> {
   @override
   Widget build(BuildContext context) {
     // Dynamic background color adapting to current theme
-    final screenBg = widget.isDark
-        ? const Color(0xFF1E1F29)
-        : const Color(0xFFE0E5EC);
+    final screenBg = powerLevel > 80
+        ? (widget.isDark ? const Color(0xFF3A1712) : const Color(0xFFFFE0D6))
+        : (widget.isDark ? const Color(0xFF1E1F29) : const Color(0xFFE0E5EC));
     final cardBg = widget.isDark ? const Color(0xFF282A36) : Colors.white;
 
     return Scaffold(
@@ -205,32 +205,32 @@ class _ControlDeckScreenState extends State<ControlDeckScreen> {
               alignment: WrapAlignment.center,
               children: [
                 TactileButton(
-                  icon: Icons.flash_on,
-                  label: "TURBO",
-                  accentColor: Colors.amber,
+                  icon: Icons.blender,
+                  label: "BLEND",
+                  accentColor: Colors.orange,
                   isDark: widget.isDark,
-                  onPressed: () => _triggerAction("TURBO BOOST"),
+                  onPressed: () => _triggerAction("BLEND"),
                 ),
                 TactileButton(
-                  icon: Icons.shield,
-                  label: "SHIELD",
-                  accentColor: Colors.tealAccent,
+                  icon: Icons.bakery_dining,
+                  label: "BAKE",
+                  accentColor: Colors.brown,
                   isDark: widget.isDark,
-                  onPressed: () => _triggerAction("DEFENSE SHIELD"),
+                  onPressed: () => _triggerAction("BAKE"),
                 ),
                 TactileButton(
-                  icon: Icons.wifi_tethering,
-                  label: "RADAR",
-                  accentColor: Colors.purpleAccent,
+                  icon: Icons.ac_unit,
+                  label: "CHILL",
+                  accentColor: Colors.lightBlue,
                   isDark: widget.isDark,
-                  onPressed: () => _triggerAction("PULSE RADAR"),
+                  onPressed: () => _triggerAction("CHILL"),
                 ),
                 TactileButton(
-                  icon: Icons.rocket_launch,
-                  label: "LAUNCH",
-                  accentColor: Colors.redAccent,
+                  icon: Icons.whatshot,
+                  label: "SEAR",
+                  accentColor: Colors.deepOrange,
                   isDark: widget.isDark,
-                  onPressed: () => _triggerAction("THRUSTER LAUNCH"),
+                  onPressed: () => _triggerAction("SEAR"),
                 ),
               ],
             ),
